@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FY2025 CE Attainment Tracker (Prototype)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CE</div>
+        <div class="brand-text">
+          <div class="brand-title">FY2025 Tracker</div>
+          <div class="brand-subtitle">Client Executive Attainment</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-item active" data-view="overview">Overview</button>
+        <button class="nav-item" data-view="revenue">Revenue</button>
+        <button class="nav-item" data-view="margin">Margin</button>
+        <button class="nav-item" data-view="yoy">YOY Growth</button>
+        <button class="nav-item" data-view="mbo">MBO</button>
+        <button class="nav-item" data-view="settings">Settings / Assumptions</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="muted">FY runs Apr 1, 2025 – Mar 31, 2026</div>
+        <div class="actions">
+          <button class="secondary" id="btnLoadSample">Load sample data</button>
+          <button class="secondary" id="btnReset">Reset</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Overview</h1>
+          <div class="muted" id="pageSubtitle">Projected incentive payout excluding Strategic Pursuits</div>
+        </div>
+        <div class="topbar-right">
+          <div class="pill" id="planPill">Plan: FY2025</div>
+          <div class="pill" id="savePill">Saved locally</div>
+        </div>
+      </header>
+
+      <section class="content" id="view-overview"></section>
+      <section class="content hidden" id="view-revenue"></section>
+      <section class="content hidden" id="view-margin"></section>
+      <section class="content hidden" id="view-yoy"></section>
+      <section class="content hidden" id="view-mbo"></section>
+      <section class="content hidden" id="view-settings"></section>
+
+      <footer class="footer">
+        <div class="muted">Prototype: manual entry only. Strategic Pursuit deals are intentionally excluded from total attainment/payout.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
