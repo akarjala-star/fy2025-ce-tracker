@@ -4,7 +4,8 @@ RUN apk add --no-cache apache2-utils
 
 COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY entrypoint.sh /entrypoint.sh
 
-RUN htpasswd -bc /etc/nginx/.htpasswd ceadmin password
+RUN chmod +x /entrypoint.sh
 
-
+CMD ["/entrypoint.sh"]
