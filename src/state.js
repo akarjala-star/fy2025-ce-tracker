@@ -1,7 +1,9 @@
 import { FY2025 } from '../rules/fy2025.js';
 
 const STORAGE_KEY = 'ce_tracker_fy2025_v1';
-
+const SCENARIOS_KEY = 'ce_tracker_scenarios_v1';
+const ACTIVE_SCENARIO_KEY = 'ce
+  
 export function defaultModel() {
   return {
     employee_name: 'Sample CE',
@@ -89,4 +91,46 @@ export function saveModel(model) {
 
 export function resetModel() {
   localStorage.removeItem(STORAGE_KEY);
+}
+export function listScenarios() {
+  try {
+    const raw = localStorage.getItem(SCENARIOS_KEY);
+    const scenarios = raw ? JSON.parse(raw) : {};
+    return scenarios;
+  } catch {
+    return {};
+  }
+}
+
+export function saveScenario(name, model) {
+  const scenarios = listScenarios();
+  scenarios[name] = model;
+  localStorage.setItem(SCENARIOS_KEY, JSON.stringify(scenarios));
+}
+
+export function deleteScenario(name) {
+  const scenarios = listScenarios();
+  delete scenarios[name];
+  localStorage.setItem(SCENARIOS_KEY, JSON.stringify(scenarios));
+}
+
+export function setActiveScenario(name) {
+  localStorage.setItem(ACTIVE_SCENARIO_KEY, name);
+}
+
+export function getActiveScenario() {
+  return localStorage.getItem(ACTIVE_SCENARIO_KEY) || '';
+}
+
+export function loadScenario(name) {
+  const scenarios = listScenarios();
+  return scenarios[name] || null;
+}
+
+export function duplicateScenario(fromName, toName) {
+  const scenarios = listScenarios();
+  if (!scenarios[fromName]) return false;
+  scenarios[toName] = scenarios[fromName];
+  localStorage.setItem(SCENARIOS_KEY, JSON.stringify(scenarios));
+  return true;
 }
