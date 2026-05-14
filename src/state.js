@@ -1,5 +1,3 @@
-import { FY2025 } from '../rules/fy2025.js';
-
 const STORAGE_KEY = 'ce_tracker_fy2025_v1';
 const SCENARIOS_KEY = 'ce_tracker_scenarios_v1';
 const ACTIVE_SCENARIO_KEY = 'ce
