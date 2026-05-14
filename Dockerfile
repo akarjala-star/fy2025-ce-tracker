@@ -1,6 +1,4 @@
-FROM nginx:alpine
-
-# htpasswd tool
+FROM nginx:alpineFROM nginx:alpasswd tool
 RUN apk add --no-cache apache2-utils
 
 # Static site + nginx config
