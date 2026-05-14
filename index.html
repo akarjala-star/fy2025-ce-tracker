@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FY2025 CE Attainment Tracker (Prototype)</title>
 
-  <!-- Cache-buster added to avoid stale CSS during rapid iteration -->
+  <!-- Prevent stale CSS -->
   <link rel="stylesheet" href="assets/styles.css?v=20260514" />
 </head>
 
 <body>
   <div class="app-shell">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
+
       <div class="brand">
         <div class="brand-mark">CE</div>
         <div class="brand-text">
@@ -29,6 +32,7 @@
         <button class="nav-item" data-view="settings">Settings / Assumptions</button>
       </nav>
 
+      <!-- ✅ sidebar footer FIXED -->
       <div class="sidebar-footer">
         <div class="muted">FY runs Apr 1, 2025 – Mar 31, 2026</div>
 
@@ -37,49 +41,17 @@
           <button class="secondary" id="btnReset">Reset</button>
         </div>
 
-        <!-- Optional logout link if you added /logout in nginx.conf -->
         <div class="actions" style="margin-top:8px">
-          <a class="secondary"
-             href="/logout"
-             style="display:inline-flex;align-items:center;justify-content:center;flex:1;text-decoration:none;">
+          <a class="secondary" href="/logout"
+             style="display:block; text-align:center; text-decoration:none; line-height:38px;">
             Log out
           </a>
         </div>
       </div>
+
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main">
       <header class="topbar">
         <div>
-          <h1 id="pageTitle">Overview</h1>
-          <div class="muted" id="pageSubtitle">
-            Projected incentive payout excluding Strategic Pursuits
-          </div>
-        </div>
-
-        <div class="topbar-right">
-          <div class="pill" id="planPill">Plan: FY2025</div>
-          <div class="pill" id="savePill">Saved locally</div>
-        </div>
-      </header>
-
-      <!-- Views: app.js injects content into these -->
-      <section class="content" id="view-overview"></section>
-      <section class="content hidden" id="view-revenue"></section>
-      <section class="content hidden" id="view-margin"></section>
-      <section class="content hidden" id="view-yoy"></section>
-      <section class="content hidden" id="view-mbo"></section>
-      <section class="content hidden" id="view-settings"></section>
-
-      <footer class="footer">
-        <div class="muted">
-          Prototype: manual entry only. Strategic Pursuit deals are intentionally excluded from total attainment/payout.
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <!-- Cache-buster added to avoid stale JS after redeploys -->
-  <script type="module" src="src/app.js?v=20260514"></script>
-</body>
-</html>
