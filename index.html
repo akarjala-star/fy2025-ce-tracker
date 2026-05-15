@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FY2025 CE Attainment Tracker (Prototype)</title>
-
-  <!-- Cache-buster prevents stale CSS -->
-  <link rel="stylesheet" href="/assets/styles.css?v=20260514""app-shell">
-    <!-- Sidebar -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-mark">CE</div>
@@ -28,16 +28,15 @@
 
       <div class="sidebar-footer">
         <div class="muted">FY runs Apr 1, 2025 – Mar 31, 2026</div>
-
         <div class="actions">
           <button class="secondary" id="btnLoadSample">Load sample data</button>
           <button class="secondary" id="btnReset">Reset</button>
         </div>
+      </div>
+    </aside>
 
-        <div class="actions" style="margin-top:8px">
-          <a class="secondary"
-             href="/logout"
-             style="text-align:center; text-decoration:none; display:block; line-height:38pxclass="topbar">
+    <main class="main">
+      <header class="topbar">
         <div>
           <h1 id="pageTitle">Overview</h1>
           <div class="muted" id="pageSubtitle">Projected incentive payout excluding Strategic Pursuits</div>
@@ -56,12 +55,11 @@
       <section class="content hidden" id="view-settings"></section>
 
       <footer class="footer">
-        <div class="muted">
-          Prototype: manual entry only. Strategic Pursuit deals are intentionally excluded from total attainment/payout.
-        </div>
+        <div class="muted">Prototype: manual entry only. Strategic Pursuit deals are intentionally excluded from total attainment/payout.</div>
       </footer>
     </main>
   </div>
 
-  <!-- Cache-buster prevents stale JS; MUST be type=module -->
-  <script type="module" src="/src/app.js?v=20260514
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
